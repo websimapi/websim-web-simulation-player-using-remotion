@@ -14,12 +14,12 @@ function HeaderSmall() {
   const letters = ["B", "I", "N", "G", "O"];
   return (
     // Render the letters in a matching grid so they align with the 5x5 numbers
-    /* @__PURE__ */ jsxDEV("div", { style: { display: "grid", gridTemplateColumns: "repeat(5, 92px)", gap: 8, justifyContent: "center", marginBottom: 12 }, children: letters.map((L) => /* @__PURE__ */ jsxDEV(
+    /* @__PURE__ */ jsxDEV("div", { style: { display: "grid", gridTemplateColumns: "repeat(5, 150px)", gap: 8, justifyContent: "center", marginBottom: 12 }, children: letters.map((L) => /* @__PURE__ */ jsxDEV(
       "div",
       {
         style: {
-          width: 92,
-          height: 92,
+          width: 150,
+          height: 150,
           borderRadius: 12,
           display: "flex",
           alignItems: "center",
@@ -27,10 +27,8 @@ function HeaderSmall() {
           background: "#ffffff",
           boxShadow: "0 4px 10px rgba(0,0,0,0.06)",
           border: `4px solid #2b2b2b`,
-          // header thicker outline to match composition
-          fontSize: 48,
+          fontSize: 84,
           fontWeight: 900,
-          // bolder letters
           color: "#1b1b1b",
           fontFamily: "Arial, Helvetica, sans-serif"
         },
@@ -112,7 +110,7 @@ function InteractiveApp() {
         lineNumber: 119,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ jsxDEV("div", { style: { display: "grid", gridTemplateColumns: "repeat(5, 92px)", gap: 8, justifyContent: "center", marginTop: 6 }, children: exampleCard.map(
+      /* @__PURE__ */ jsxDEV("div", { style: { display: "grid", gridTemplateColumns: "repeat(5, 150px)", gap: 8, justifyContent: "center", marginTop: 6 }, children: exampleCard.map(
         (row, rIdx) => row.map((cell, cIdx) => {
           const isFree = typeof cell === "string" && cell.toLowerCase().includes("free");
           const tapped = actions.some((a) => a.r === rIdx && a.c === cIdx);
@@ -121,14 +119,13 @@ function InteractiveApp() {
             {
               onClick: () => handleCellTap(rIdx, cIdx),
               style: {
-                width: 92,
-                height: 92,
+                width: 150,
+                height: 150,
                 borderRadius: 12,
                 border: "3px solid #2b2b2b",
-                // match composition thicker outline for cells
                 background: isFree ? "#efefef" : "#fff",
                 fontWeight: 700,
-                fontSize: 28,
+                fontSize: 72,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -141,8 +138,8 @@ function InteractiveApp() {
               children: [
                 tapped && /* @__PURE__ */ jsxDEV("div", { style: {
                   position: "absolute",
-                  width: 74,
-                  height: 74,
+                  width: Math.round(150 * 0.7),
+                  height: Math.round(150 * 0.7),
                   borderRadius: 999,
                   background: "#ff6b6b",
                   opacity: 0.95,
@@ -152,7 +149,7 @@ function InteractiveApp() {
                   lineNumber: 149,
                   columnNumber: 25
                 }, this),
-                /* @__PURE__ */ jsxDEV("div", { style: { zIndex: 1, fontSize: 20 }, children: isFree ? "FREE" : cell }, void 0, false, {
+                /* @__PURE__ */ jsxDEV("div", { style: { zIndex: 1, fontSize: 32 }, children: isFree ? "FREE" : cell }, void 0, false, {
                   fileName: "<stdin>",
                   lineNumber: 159,
                   columnNumber: 23
